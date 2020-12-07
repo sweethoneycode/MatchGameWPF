@@ -12,10 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
+
 
 namespace MatchGame
 {
+    using System.Windows.Threading;
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -27,9 +28,12 @@ namespace MatchGame
 
         public MainWindow()
         {
-            timer.Interval = TimeSpan.FromSeconds(.1);
-            timer.Tick += Timer_Tick;   
+
             InitializeComponent();
+
+            timer.Interval = TimeSpan.FromSeconds(.1);
+            timer.Tick += Timer_Tick;
+                       
             SetUpGame();
         }
 
@@ -63,6 +67,7 @@ namespace MatchGame
             {
                 if (textBlock.Name != "timeTextBlock")
                 {
+                    textBlock.Visibility = Visibility.Visible;
                     int index = random.Next(animalEmoji.Count);
                     string nextEmoji = animalEmoji[index];
                     textBlock.Text = nextEmoji;
