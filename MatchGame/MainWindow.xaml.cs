@@ -75,6 +75,7 @@ namespace MatchGame
                 }
             }
 
+
             timer.Start();
             tenthsOfSecondsElapsed = 0;
             matchesFound = 0;
